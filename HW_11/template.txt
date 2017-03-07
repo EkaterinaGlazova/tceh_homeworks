@@ -1,0 +1,18 @@
+Пользователи:
+{% for item in users %}
+    Имя: {{ item.name }}
+{% endfor %}
+
+
+Посты:
+{% for item in posts %}
+    Заголовок: {{ item.title }}
+    Дата: {{ item.date }}
+    Текст: {{ item.text }}
+{% endfor %}
+Конец постов
+
+Тэги:
+{% for item in tags %}
+    Тэг: {{ item.name }}
+{% endfor %}
