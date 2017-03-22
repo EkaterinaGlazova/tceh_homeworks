@@ -11,27 +11,30 @@ import config
 
 app = Flask(__name__)
 app.config.from_object(config)
-
 db = SQLAlchemy(app)
 
 #Tables
 
+
 class User(db.Model):
-    id = db.Column(db.Integer, primery_key = True, autoincrement = True)
+
+    id = db.Column(db.Integer, primary_key = True, autoincrement = True)
     name = db.Column(db.String(20), unique = True, nullable = False)
 
     def __str__(self):
         return '<Name %r>' % self.name
 
+
 class Post(db.Model):
+
     __tablename__ = 'post'
     id = db.Column(db.Integer, primary_key = True, autoincrement = True)
     date = db.Column(db.Date, default = date.today)
     title = db.Column(db.String(50))
     text = db.Column(db.String(200), nullable = False)
-    author = db.Column(db.Integer, db.ForegnKey('author'), nullable = False, index = True)
+    author = db.Column(db.Integer, db.ForeignKey('user.id'), nullable = False, index = True)
     tags = relationship("Tag", back_populates = "posts")
-    slugfield = db.Column(db.String(100), unique = True)
+    # slugfield = db.Column(db.String(100), unique = True)
     is_visible = db.Column(db.Boolean, default = True)
 
 #SlugField
@@ -48,10 +51,11 @@ class Post(db.Model):
         return '<Title %r>' % self.title
 
 class Tag(db.Model):
+
     __tablename__ = 'tag'
     id = db.Column(db.Integer, primary_key = True, autoincrement = True)
     name = db.Column(db.String(50), unique = True)
-    post_id = db.Column(db.Integer, db.ForegnKey('post.id'), nullable = False, index = True)
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable = False, index = True)
     posts = relationship("Post", back_populates = "tags")
 
     def __str__(self):
@@ -113,7 +117,7 @@ def index_post():
 
 @app.route('/tag', methods = ['GET', 'POST'])
 def index_tag():
-    if request.method == 'POST'
+    if request.method == 'POST':
         print(request.form)
         form = TagForm(request.form)
 

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Class_0703/.idea/Class_0703.iml" filepath="$PROJECT_DIR$/../Class_0703/.idea/Class_0703.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/HW_11.iml" filepath="$PROJECT_DIR$/.idea/HW_11.iml" />
       <module fileurl="file://$PROJECT_DIR$/../class_0403/.idea/class_0403.iml" filepath="$PROJECT_DIR$/../class_0403/.idea/class_0403.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/qr_code/.idea/qr_code.iml" filepath="$USER_HOME$/Downloads/qr_code/.idea/qr_code.iml" />
       <module fileurl="file://$PROJECT_DIR$/../sqlalchemy_example/.idea/sqlalchemy_example.iml" filepath="$PROJECT_DIR$/../sqlalchemy_example/.idea/sqlalchemy_example.iml" />
       <module fileurl="file://$USER_HOME$/Downloads/test_tourizm/.idea/test_tourizm.iml" filepath="$USER_HOME$/Downloads/test_tourizm/.idea/test_tourizm.iml" />
     </modules>

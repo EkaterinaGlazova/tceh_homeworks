@@ -7,6 +7,8 @@
     <orderEntry type="module" module-name="class_0403" />
     <orderEntry type="module" module-name="sqlalchemy_example" />
     <orderEntry type="module" module-name="test_tourizm" />
+    <orderEntry type="module" module-name="Class_0703" />
+    <orderEntry type="module" module-name="qr_code" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
