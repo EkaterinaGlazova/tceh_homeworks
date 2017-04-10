@@ -5,11 +5,8 @@ from django.contrib import messages
 from django.http import HttpResponse
 
 from blog_app.forms import MyForm
-from blog_app.models import Message
-import json
 
 # Create your views here.
-
 
 
 class MyView(View):
@@ -20,19 +17,13 @@ class MyView(View):
         return render(request, 'blog_app/form.html', c)
 
     def post(self, request):
+        messages_dict = []
         form = MyForm(data=request.POST)
         if form.is_valid():
-            message = form.save()
-            new_message = json.dumps(message)
-            return HttpResponse(new_message)
+            message = (request.POST.get('message'))
+            messages_dict.append(message)
+            return HttpResponse(messages_dict)
         else:
             messages.error(request, 'Validation failed')
         c = {'form': form}
         return render(request, 'blog_app/form.html', c)
-
-class MessagesView(View):
-
-    def messages_list(self, request):
-        all_messages = Message.objects.all()
-        return render(request, 'blog_app/messages.html', {'all_messages': all_messages})
-

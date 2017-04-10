@@ -16,11 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from blog_app.views import MyView, MessagesView
+from blog_app.views import MyView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^$', MyView.as_view(), name = 'form'),
-    url(r'^messages/', MessagesView.as_view(), name = 'all_messages')
 ]
