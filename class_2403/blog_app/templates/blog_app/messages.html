@@ -6,9 +6,9 @@
 
       {% if all_massages %}
       <ul class="all_messages">
-          <!--{% for message in all_messages %}-->
+          {% for messages in all_messages %}
           <li>{{all_messages}}</li>
-          <!--{% endfor %}-->
+          {% endfor %}
       </ul>
       {% endif %}
   </div>

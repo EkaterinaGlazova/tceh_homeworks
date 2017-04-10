@@ -12,6 +12,7 @@ class MyForm(forms.ModelForm):
     def save(self, commit=True):
         message = self.cleaned_data['message']
         name = self.cleaned_data['name']
+        inst = super().save()
         if message and name is None:
             raise ValueError('Massage is empty')
         else:

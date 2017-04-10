@@ -32,7 +32,7 @@ class MyView(View):
 
 class MessagesView(View):
 
-    def messages_list(self, request):
+    def get(self, request):
         all_messages = Message.objects.all()
         return render(request, 'blog_app/messages.html', {'all_messages': all_messages})
 
